@@ -1,0 +1,10 @@
+{
+  "buildCommand": "node fetch.js && react-scripts build",
+  "outputDirectory": "build",
+  "functions": {
+    "api/chat.js": {
+      "maxDuration": 30,
+      "includeFiles": "server/data/**"
+    }
+  }
+}

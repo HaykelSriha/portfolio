@@ -1,8 +1,9 @@
 import React from "react";
 import "./SocialMedia.scss";
-import {socialMediaLinks} from "../../portfolio";
+import {useTranslation} from "../../hooks/useTranslation";
 
-export default function socialMedia() {
+export default function SocialMedia() {
+  const {socialMediaLinks} = useTranslation();
   if (!socialMediaLinks.display) {
     return null;
   }

@@ -2,7 +2,7 @@ import React, {Suspense, useContext} from "react";
 import "./twitter.scss";
 import Loading from "../loading/Loading";
 import {TwitterTimelineEmbed} from "react-twitter-embed";
-import {twitterDetails} from "../../portfolio";
+import {useTranslation} from "../../hooks/useTranslation";
 import StyleContext from "../../contexts/StyleContext";
 
 const renderLoader = () => <Loading />;
@@ -20,6 +20,7 @@ var widthScreen = window.screen.width;
 
 export default function Twitter() {
   const {isDark} = useContext(StyleContext);
+  const {twitterDetails} = useTranslation();
 
   if (!twitterDetails.display) {
     return null;

@@ -1,11 +1,12 @@
 import React, {useState, useEffect, useContext} from "react";
 import "./Blog.scss";
 import BlogCard from "../../components/blogCard/BlogCard";
-import {blogSection} from "../../portfolio";
+import {useTranslation} from "../../hooks/useTranslation";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 export default function Blogs() {
   const {isDark} = useContext(StyleContext);
+  const {blogSection} = useTranslation();
   const [mediumBlogs, setMediumBlogs] = useState([]);
   function setMediumBlogsFunction(array) {
     setMediumBlogs(array);
@@ -38,12 +39,11 @@ export default function Blogs() {
               `${error} (because of this error Blogs section could not be displayed. Blogs section has reverted to default)`
             );
             setMediumBlogsFunction("Error");
-            blogSection.displayMediumBlogs = "false";
           });
       };
       getProfileData();
     }
-  }, []);
+  }, [blogSection.displayMediumBlogs]);
   if (!blogSection.display) {
     return null;
   }

@@ -1,10 +1,10 @@
 name: Build and Deploy
 env:
   CI: false
-  GITHUB_USERNAME: ${{ github.repository_owner }}
+  GITHUB_USERNAME: ${{ github.HaykelSriha }}
   REACT_APP_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This is automatically set by Github Actions
   USE_GITHUB_DATA: "true"
-  MEDIUM_USERNAME: "saadpasta" # Change this to your medium username
+  MEDIUM_USERNAME: "haykel" # Change this to your medium username
 on:
   workflow_dispatch:
   push:

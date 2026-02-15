@@ -2,20 +2,23 @@ import React, {useContext} from "react";
 import Headroom from "react-headroom";
 import "./Header.scss";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
+import LanguageSwitcher from "../languageSwitcher/LanguageSwitcher";
 import StyleContext from "../../contexts/StyleContext";
-import {
-  greeting,
-  workExperiences,
-  skillsSection,
-  openSource,
-  blogSection,
-  talkSection,
-  achievementSection,
-  resumeSection
-} from "../../portfolio";
+import {useTranslation} from "../../hooks/useTranslation";
 
 function Header() {
   const {isDark} = useContext(StyleContext);
+  const {
+    greeting,
+    workExperiences,
+    skillsSection,
+    openSource,
+    blogSection,
+    talkSection,
+    achievementSection,
+    resumeSection,
+    labels
+  } = useTranslation();
   const viewExperience = workExperiences.display;
   const viewOpenSource = openSource.display;
   const viewSkills = skillsSection.display;
@@ -43,41 +46,47 @@ function Header() {
         <ul className={isDark ? "dark-menu menu" : "menu"}>
           {viewSkills && (
             <li>
-              <a href="#skills">Skills</a>
+              <a href="#skills">{labels.skills}</a>
             </li>
           )}
           {viewExperience && (
             <li>
-              <a href="#experience">Work Experiences</a>
+              <a href="#experience">{labels.workExperiences}</a>
             </li>
           )}
           {viewOpenSource && (
             <li>
-              <a href="#opensource">Open Source</a>
+              <a href="#opensource">{labels.openSourceLabel}</a>
             </li>
           )}
           {viewAchievement && (
             <li>
-              <a href="#achievements">Achievements</a>
+              <a href="#achievements">{labels.achievements}</a>
             </li>
           )}
           {viewBlog && (
             <li>
-              <a href="#blogs">Blogs</a>
+              <a href="#blogs">{labels.blogs}</a>
             </li>
           )}
           {viewTalks && (
             <li>
-              <a href="#talks">Talks</a>
+              <a href="#talks">{labels.talks}</a>
             </li>
           )}
           {viewResume && (
             <li>
-              <a href="#resume">Resume</a>
+              <a href="#resume">{labels.resume}</a>
             </li>
           )}
           <li>
-            <a href="#contact">Contact Me</a>
+            <a href="#contact">{labels.contactMeNav}</a>
+          </li>
+          <li>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a>
+              <LanguageSwitcher />
+            </a>
           </li>
           <li>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

@@ -1,8 +1,9 @@
 import React from "react";
 import "./SoftwareSkill.scss";
-import {skillsSection} from "../../portfolio";
+import {useTranslation} from "../../hooks/useTranslation";
 
 export default function SoftwareSkill() {
+  const {skillsSection} = useTranslation();
   return (
     <div>
       <div className="software-skills-main-div">

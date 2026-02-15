@@ -6,11 +6,12 @@ import landingPerson from "../../assets/lottie/landingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
-import {illustration, greeting} from "../../portfolio";
+import {useTranslation} from "../../hooks/useTranslation";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);
+  const {illustration, greeting, labels} = useTranslation();
   if (!greeting.displayGreeting) {
     return null;
   }
@@ -39,14 +40,14 @@ export default function Greeting() {
               <div id="resume" className="empty-div"></div>
               <SocialMedia />
               <div className="button-greeting-div">
-                <Button text="Contact me" href="#contact" />
+                <Button text={labels.contactMe} href="#contact" />
                 {greeting.resumeLink && (
                   <a
                     href={require("./resume.pdf")}
                     download="Resume.pdf"
                     className="download-link-button"
                   >
-                    <Button text="Download my resume" />
+                    <Button text={labels.downloadResume} />
                   </a>
                 )}
               </div>

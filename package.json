@@ -23,6 +23,8 @@
   "scripts": {
     "predeploy": "npm run build",
     "start": "node fetch.js && react-scripts start",
+    "start:server": "cd server && node index.js",
+    "dev": "concurrently \"npm start\" \"npm run start:server\"",
     "build": "node fetch.js && react-scripts build",
     "deploy": "gh-pages -b master -d build",
     "test": "react-scripts test",
@@ -52,6 +54,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "concurrently": "^8.2.2",
     "dotenv": "^8.2.0",
     "prettier": "^2.3.1"
   }

@@ -1,5 +1,5 @@
 import React, {useState, useEffect, lazy, Suspense} from "react";
-import {openSource} from "../../portfolio";
+import {useTranslation} from "../../hooks/useTranslation";
 import Contact from "../contact/Contact";
 import Loading from "../loading/Loading";
 
@@ -8,6 +8,7 @@ const GithubProfileCard = lazy(() =>
   import("../../components/githubProfileCard/GithubProfileCard")
 );
 export default function Profile() {
+  const {openSource} = useTranslation();
   const [prof, setrepo] = useState([]);
   function setProfileFunction(array) {
     setrepo(array);
@@ -30,12 +31,11 @@ export default function Profile() {
               `${error} (because of this error GitHub contact section could not be displayed. Contact section has reverted to default)`
             );
             setProfileFunction("Error");
-            openSource.showGithubProfile = "false";
           });
       };
       getProfileData();
     }
-  }, []);
+  }, [openSource.showGithubProfile]);
   if (
     openSource.display &&
     openSource.showGithubProfile === "true" &&

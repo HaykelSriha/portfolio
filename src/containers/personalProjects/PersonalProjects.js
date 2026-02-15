@@ -1,10 +1,10 @@
 import React, {useContext} from "react";
-import "./StartupProjects.scss";
+import "../StartupProjects/StartupProjects.scss";
 import {useTranslation} from "../../hooks/useTranslation";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
-export default function StartupProject() {
+export default function PersonalProjects() {
   function openUrlInNewTab(url) {
     if (!url) {
       return;
@@ -14,15 +14,15 @@ export default function StartupProject() {
   }
 
   const {isDark} = useContext(StyleContext);
-  const {bigProjects} = useTranslation();
-  if (!bigProjects.display) {
+  const {personalProjects} = useTranslation();
+  if (!personalProjects.display) {
     return null;
   }
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className="main" id="projects">
+      <div className="main" id="personal-projects">
         <div>
-          <h1 className="skills-heading">{bigProjects.title}</h1>
+          <h1 className="skills-heading">{personalProjects.title}</h1>
           <p
             className={
               isDark
@@ -30,11 +30,11 @@ export default function StartupProject() {
                 : "subTitle project-subtitle"
             }
           >
-            {bigProjects.subtitle}
+            {personalProjects.subtitle}
           </p>
 
           <div className="projects-container">
-            {bigProjects.projects.map((project, i) => {
+            {personalProjects.projects.map((project, i) => {
               return (
                 <div
                   key={i}

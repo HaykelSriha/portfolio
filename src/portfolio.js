@@ -254,6 +254,18 @@ const personalProjects = {
           url: "https://anime-recommender-lpgvr76z8jmhw8suz2c5yp.streamlit.app/"
         }
       ]
+    },
+    {
+      image: require("./assets/images/programmer.svg"),
+      projectName: "TripRadar",
+      projectDesc:
+        "A flight deal alert service for French travelers. Monitors 240 European routes every 6h and scores deals in real-time based on price, duration, and popularity. Available on Android.",
+      footerLink: [
+        {
+          name: "Live Demo",
+          url: "https://tripradar-two.vercel.app/"
+        }
+      ]
     }
   ],
   display: true

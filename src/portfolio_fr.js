@@ -251,6 +251,18 @@ const personalProjects = {
           url: "https://anime-recommender-lpgvr76z8jmhw8suz2c5yp.streamlit.app/"
         }
       ]
+    },
+    {
+      image: require("./assets/images/programmer.svg"),
+      projectName: "TripRadar",
+      projectDesc:
+        "Un service d'alertes de vols pas chers pour les voyageurs français. Surveille 240 routes européennes toutes les 6h et calcule un score en temps réel basé sur le prix, la durée et la popularité. Disponible sur Android.",
+      footerLink: [
+        {
+          name: "Démo en ligne",
+          url: "https://tripradar-two.vercel.app/"
+        }
+      ]
     }
   ],
   display: true

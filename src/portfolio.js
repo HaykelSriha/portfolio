@@ -266,6 +266,18 @@ const personalProjects = {
           url: "https://tripradar-two.vercel.app/"
         }
       ]
+    },
+    {
+      image: require("./assets/images/ludoLogo.png"),
+      projectName: "Ludo++",
+      projectDesc:
+        "A chaotic multiplayer Ludo variant built with React Native & Expo. Features mines, guns, portals, nukes and a prison system for 2–4 players. Pass-the-phone local multiplayer.",
+      footerLink: [
+        {
+          name: "Live Demo",
+          url: "https://ludo-kohl-ten.vercel.app/"
+        }
+      ]
     }
   ],
   display: true

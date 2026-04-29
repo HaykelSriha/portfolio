@@ -228,6 +228,13 @@ const bigProjects = {
       projectDesc:
         "Travail sur les CNN et Transformers (CoAtNet) pour la reconnaissance sonore. Construction d'un pipeline de traitement du signal pour détecter les frappes clavier à partir d'un microphone ambiant.",
       footerLink: []
+    },
+    {
+      image: require("./assets/images/hecLogo.png"),
+      projectName: "HEC Fintech Hackathon",
+      projectDesc:
+        "Solution fintech développée lors du Hackathon HEC Paris. Frontend React.js, backend FastAPI, et modèle IA TensorFlow pour l'analyse et la prédiction de données financières.",
+      footerLink: []
     }
   ],
   display: true
@@ -261,6 +268,18 @@ const personalProjects = {
         {
           name: "Démo en ligne",
           url: "https://tripradar-two.vercel.app/"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/ludoLogo.png"),
+      projectName: "Ludo++",
+      projectDesc:
+        "Un jeu de Ludo multijoueur chaotique développé avec React Native & Expo. Mines, flingues, portails, nukes et un système de prison pour 2 à 4 joueurs. Multijoueur local en mode pass-the-phone.",
+      footerLink: [
+        {
+          name: "Jouer",
+          url: "https://ludo-kohl-ten.vercel.app/"
         }
       ]
     }

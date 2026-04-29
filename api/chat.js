@@ -87,7 +87,7 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const {message} = req.body;
+    const {message, history = []} = req.body;
 
     if (!message || typeof message !== "string") {
       return res.status(400).json({error: "Message is required"});
@@ -113,6 +113,7 @@ module.exports = async function handler(req, res) {
       model: LLM_MODEL,
       messages: [
         {role: "system", content: SYSTEM_PROMPT + "\n\nContext:\n" + context},
+        ...history,
         {role: "user", content: message}
       ],
       max_tokens: 300,

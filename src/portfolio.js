@@ -232,6 +232,13 @@ const bigProjects = {
       projectDesc:
         "Worked on CNNs and Transformers (CoAtNet) for sound recognition. Built signal processing pipeline to detect keystrokes from ambient microphone audio.",
       footerLink: []
+    },
+    {
+      image: require("./assets/images/hecLogo.png"),
+      projectName: "HEC Fintech Hackathon",
+      projectDesc:
+        "Built a fintech solution at the HEC Paris Hackathon. React.js frontend, FastAPI backend, and TensorFlow AI model for financial data analysis and prediction.",
+      footerLink: []
     }
   ],
   display: true

@@ -39,10 +39,11 @@ export default function Chatbot() {
     setIsLoading(true);
 
     try {
+      const history = messages.slice(-10);
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({message: trimmed})
+        body: JSON.stringify({message: trimmed, history})
       });
 
       const data = await response.json();
@@ -131,9 +132,9 @@ export default function Chatbot() {
           </div>
 
           <div className="chatbot-input-area">
-            <input
+            <textarea
               ref={inputRef}
-              type="text"
+              rows={2}
               className={`chatbot-input ${isDark ? "chatbot-input-dark" : ""}`}
               value={input}
               onChange={e => setInput(e.target.value)}
